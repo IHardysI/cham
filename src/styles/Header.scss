@@ -157,6 +157,9 @@
     .header-right {
         order: 3;
         padding-top: 16px;
+        display: flex;
+        gap: 5px;
+        align-items: flex-start;
         @media (min-width: 768px) {
             padding-top: 32px;
         }
@@ -179,7 +182,7 @@
                 display: inline-flex;
                 height: 28px;
                 justify-content: center;
-                margin-right: 4px;
+                /*margin-right: 4px;*/
                 transition: all .25s ease;
                 -webkit-transition: all .25s ease;
                 width: 28px;
@@ -200,7 +203,26 @@
                     }
                 }
             }
-            p {
+            .header-right-btn-connect {
+                cursor: pointer;
+                align-items: center;
+                background-color: #ffffff26;
+                border-radius: 50%;
+                color: #fff;
+                display: inline-flex;
+                height: 28px;
+                justify-content: center;
+                /*margin-right: 4px;*/
+                transition: all .25s ease;
+                -webkit-transition: all .25s ease;
+                &:hover {
+                    background-color: #ffffff4d;
+                }
+                @media(min-width: 1024px) {
+                    height: 52px;
+                }
+            }
+            /*p {
                 color: #ffffff80;
                 font-size: 16px;
                 font-weight: 500;
@@ -209,10 +231,84 @@
                     font-size: 22px;
                     margin: 0 12px;
                 }
+            }*/
+        }
+        .header-right-btn-connect {
+            align-items: center;
+            border: 1px solid hsla(0, 0%, 100%, .15);
+            border-radius: 60px;
+            display: flex;
+            padding: 5px;
+            @media(min-width: 1024px) {
+                border-radius: 100px;
+                padding: 8px;
+            }
+            .wallet-adapter-dropdown {
+                .wallet-adapter-button {
+                    border: 1px solid hsla(0, 0%, 100%, .15) !important;
+                padding: 5px !important;
+                border-radius: 100px !important;
+                @media(min-width: 1024px) {
+                    padding: 8px !important;
+                }
+                cursor: pointer;
+                align-items: center !important;
+                background-color: #512da8 !important; 
+                /*border-radius: 50% !important;*/
+                color: #fff !important;
+                display: inline-flex !important;
+                height: 28px !important;
+                max-width: 126px;
+                justify-content: center !important;
+                /*margin-right: 4px;*/
+                transition: all .25s ease !important;
+                -webkit-transition: all .25s ease !important;
+                //width: 28px !important;
+                &:hover {
+                    background-color: #3d12a4 !important;
+                }
+                @media(min-width: 1024px) {
+                    height: 52px !important;
+                    //width: 52px;
+                }
+                p {
+                    font-size: 12.98px;
+                }
+                }
+            }
+            .custom-connect {
+                border: 1px solid hsla(0, 0%, 100%, .15) !important;
+                padding: 5px !important;
+                border-radius: 100px !important;
+                @media(min-width: 1024px) {
+                    padding: 8px !important;
+                }
+                cursor: pointer;
+                align-items: center !important;
+                background-color: #ffffff26 !important; 
+                /*border-radius: 50% !important;*/
+                color: #fff !important;
+                display: inline-flex !important;
+                height: 28px !important;
+                max-width: 126px;
+                justify-content: center !important;
+                /*margin-right: 4px;*/
+                transition: all .25s ease !important;
+                -webkit-transition: all .25s ease !important;
+                //width: 28px !important;
+                &:hover {
+                    background-color: #ffffff4d !important;
+                }
+                @media(min-width: 1024px) {
+                    height: 52px !important;
+                    //width: 52px;
+                }
+                p {
+                    font-size: 12.98px;
+                }
             }
         }
     }
 }
-
 
 

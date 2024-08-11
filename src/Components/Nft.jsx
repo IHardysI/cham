@@ -11,7 +11,7 @@ function Nft() {
             </div>
             <div className="nft-btn-container">
                     <div className="nft-btn">
-                        <a href="#">Lorem, ipsum</a>
+                        <a href="#">Mint NFT</a>
                     </div>
                 </div>
         </div>

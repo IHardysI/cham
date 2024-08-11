@@ -2,17 +2,19 @@ import React from "react"
 import '../styles/Welcome.scss'
 import scroll from '../assets/scroll.svg'
 import scrollArrow from '../assets/scroll-arrow.svg'
+import solanaImg from "../assets/solanaLogoMark.svg"
 
 function Welcome() {
     return (
         <section className="welcome">
             <div className="welcome-texts">
-                <h1 className="welcome-h1">Lorem ipsum dolor sit amet</h1>
-                <p className="welcome-sub">Lorem ipsum dolor sit amet</p>
-                <p className="welcome-about">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex delectus deleniti dolorem praesentium assumenda id adipisci vel doloremque accusamus impedit unde hic sint </p>
+                <h1 className="welcome-h1">Become a unique CEO on Solana</h1>
+                <img src={solanaImg} className="welcome-sub"></img>
+                <p className="welcome-about">This is the first truly large-scale project on Solana. We invite you to explore the beautiful network of Solana with us. Do assignments, do activities within the network within our project. 
+                <br/> Listing coming soon...</p>
                 <div className="welcome-btn-container">
                     <div className="welcome-btn">
-                        <a href="#">Lorem, ipsum</a>
+                        <a href="#">Buy coin</a>
                     </div>
                 </div>
             </div>

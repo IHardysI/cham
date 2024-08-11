@@ -133,6 +133,7 @@
             }
         }
         .header-center-p {
+            color: white;
             font-size: 26px;
             font-weight: 500;
             margin-left: 16px;
@@ -160,10 +161,32 @@
         display: flex;
         gap: 5px;
         align-items: flex-start;
+        position: relative;
         @media (min-width: 768px) {
             padding-top: 32px;
         }
         .header-right-btn {
+            .header-right-btn-cover {
+                position: absolute;
+                width: 28px;
+                height: 28px;
+                background: rgba(64, 64, 64, 0.7);
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @media(min-width: 1024px) {
+                    height: 52px;
+                    width: 52px;
+                }
+                svg {
+                    fill: white;
+                    @media(min-width: 1024px) {
+                        height: 25px;
+                        width: 25px;
+                    }
+                }
+            }
             align-items: center;
             border: 1px solid hsla(0, 0%, 100%, .15);
             border-radius: 60px;

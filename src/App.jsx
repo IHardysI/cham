@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useContext, createContext } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
-import { WalletModalProvider, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
   PhantomWalletAdapter,
   SolflareWalletAdapter,
@@ -10,24 +10,23 @@ import {
 import { clusterApiUrl } from '@solana/web3.js';
 import Home from "./pages/Home";
 import '@solana/wallet-adapter-react-ui/styles.css';
+import Socials from './pages/Socials.jsx';
 
-function App() {
+// UserContext to hold wallet address
+export const UserContext = createContext();
+
+const UserProvider = ({ children }) => {
+  const [walletAddress, setWalletAddress] = useState(null);
+
   return (
-    <Context>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
-    </Context>
+    <UserContext.Provider value={{ walletAddress, setWalletAddress }}>
+      {children}
+    </UserContext.Provider>
   );
-}
+};
 
-export default App;
-
-const Context = ({ children }) => {
-  const endpoint = useMemo(() => clusterApiUrl('mainnet-beta'), []); // Directly use 'mainnet-beta' for endpoint
-
+const App = () => {
+  const endpoint = useMemo(() => clusterApiUrl('mainnet-beta'), []);
   const wallets = useMemo(() => [
     new PhantomWalletAdapter(),
     new SolflareWalletAdapter(),
@@ -35,10 +34,21 @@ const Context = ({ children }) => {
   ], []);
 
   return (
-    <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect>
-        <WalletModalProvider>{children}</WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
+    <UserProvider>
+      <ConnectionProvider endpoint={endpoint}>
+        <WalletProvider wallets={wallets} autoConnect>
+          <WalletModalProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/socials" element={<Socials />} />
+              </Routes>
+            </BrowserRouter>
+          </WalletModalProvider>
+        </WalletProvider>
+      </ConnectionProvider>
+    </UserProvider>
   );
-}
+};
+
+export default App;

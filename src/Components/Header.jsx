@@ -50,9 +50,9 @@ function Header() {
                 </svg>
               </span>
           </Link >
-          <span className="header-right-btn-cover">
+          {/* <span className="header-right-btn-cover">
             <ClockCircleOutlined />
-          </span>
+          </span> */}
         </div>
         <div className="header-right-btn-connect">
           <WalletMultiButton />

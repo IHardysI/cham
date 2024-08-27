@@ -12,7 +12,6 @@ import Home from "./pages/Home";
 import '@solana/wallet-adapter-react-ui/styles.css';
 import Socials from './pages/Socials.jsx';
 
-// UserContext to hold wallet address
 export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
@@ -32,6 +31,7 @@ const App = () => {
     new SolflareWalletAdapter(),
     new TorusWalletAdapter()
   ], []);
+
 
   return (
     <UserProvider>

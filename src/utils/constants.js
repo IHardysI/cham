@@ -1,0 +1,1 @@
+export const CANDY_MASHINE_ID = new PublicKey("5NQHGd3V2wLrSUV5pTajFhfQRUFHjQaRYjZXDKauhFUW")

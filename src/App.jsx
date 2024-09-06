@@ -11,11 +11,14 @@ import { clusterApiUrl } from '@solana/web3.js';
 import Home from "./pages/Home";
 import '@solana/wallet-adapter-react-ui/styles.css';
 import Socials from './pages/Socials.jsx';
+import * as bootstrap from 'bootstrap'
+
 
 export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [walletAddress, setWalletAddress] = useState(null);
+
 
   return (
     <UserContext.Provider value={{ walletAddress, setWalletAddress }}>
